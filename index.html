@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Gestión - Business Central</title>
+    <!-- Aquí vinculamos los estilos -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Barra de navegación para futuras opciones -->
+    <nav id="sidebar">
+        <h2>Menú Principal</h2>
+        <ul id="menu">
+            <li><a href="#" class="active" onclick="loadView('ordenes')">Órdenes de Compra</a></li>
+            <!-- Aquí agregaremos más opciones en el futuro -->
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal donde inyectaremos la información -->
+    <main id="content">
+        <header>
+            <h1>Órdenes de Compra</h1>
+            <!-- Controles de filtro (se programarán en JS) -->
+            <div class="filters">
+                <label for="statusFilter">Estado:</label>
+                <select id="statusFilter">
+                    <option value="all">Todas</option>
+                    <option value="completed">Completadas</option>
+                    <option value="pending">Pendientes</option>
+                </select>
+                <button onclick="applyFilters()">Filtrar</button>
+            </div>
+        </header>
+
+        <!-- Área de carga (Loader) -->
+        <div id="loader" style="display: none;">Cargando datos...</div>
+
+        <!-- Tabla donde se mostrarán los datos -->
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Nº Orden</th>
+                    <th>Proveedor</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Los datos se inyectarán aquí con JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Aquí vinculamos la lógica -->
+    <script src="js/app.js"></script>
+</body>
+</html>
